@@ -1,0 +1,18 @@
+# TokenChow Commercial Configuration
+# This file is separate from the upstream config.yaml to avoid merge conflicts
+
+# Billing configuration
+billing:
+  enabled: false
+  # currency: "CNY"
+  # payment_providers: []
+
+# Multi-tenant configuration
+tenant:
+  enabled: false
+  # max_tenants: 100
+
+# Analytics configuration
+analytics:
+  enabled: false
+  # retention_days: 90

@@ -7,6 +7,7 @@ import (
 	"chat/auth"
 	"chat/channel"
 	"chat/cli"
+	"chat/commercial" // [COMMERCIAL] commercial extension
 	"chat/globals"
 	"chat/manager"
 	"chat/manager/conversation"
@@ -49,11 +50,13 @@ func registerApiRouter(engine *gin.Engine) {
 		manager.Register(app)
 		addition.Register(app)
 		conversation.Register(app)
+		commercial.Register(app) // [COMMERCIAL] commercial routes
 	}
 }
 
 func main() {
 	utils.ReadConf()
+	commercial.InitConfig() // [COMMERCIAL] load commercial config
 	admin.InitInstance()
 	channel.InitManager()
 
